@@ -4,6 +4,9 @@
 #include <string>
 #include <unordered_map>
 
+#include "json.hpp"
+
+using nlohmann::json;
 using namespace std;
 
 #define location pair<double, double>
@@ -13,7 +16,7 @@ void printHelp();
 int main(int argc, char** argv) {
     if (argc < 2) printHelp();
     
-    unordered_map<string, location> cities;
+    unordered_map<std::string, location> cities;
     cities["detroit"] = location(42.3371482629, -83.056947069);
     cities["ann arbor"] = location(42.27748804120473, -83.73521358074206);
     cities["new york"] = location(40.768162910467154, -73.97723644816625);
